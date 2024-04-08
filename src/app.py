@@ -12,7 +12,7 @@ import base64
 import xml.etree.ElementTree as ET
 from shapely.geometry import LineString
 
-from database import *
+'''from database import *'''
 
 # External CSS
 external_stylesheets = [
@@ -26,10 +26,11 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets, external_sc
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js'],
     suppress_callback_exceptions=True)
 server = app.server
-session, connection = get_session()
+'''session, connection = get_session()
 
-df_trails = pd.read_sql('SELECT * FROM trails', con=connection)
+df_trails = pd.read_sql('SELECT * FROM trails', con=connection)'''
 
+df_trails = pd.read_csv('50_trails.csv')
 all_trail_names = df_trails['trail_name'].tolist()
 
 def gpx_to_points(gpx_path):
