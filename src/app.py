@@ -30,7 +30,7 @@ server = app.server
 
 df_trails = pd.read_sql('SELECT * FROM trails', con=connection)'''
 
-df_trails = pd.read_csv('50_trails.csv')
+df_trails = pd.read_csv('50_trails 3.csv')
 all_trail_names = df_trails['trail_name'].tolist()
 
 def gpx_to_points(gpx_path):
